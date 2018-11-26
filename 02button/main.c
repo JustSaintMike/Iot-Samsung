@@ -16,7 +16,8 @@ void btn_handler(void *arg)
   gpio_toggle(GPIO_PIN(PORT_C, 8));
  //gpio_toggle(GPIO_PIN(PORT_C, 8));
 
-xtimer_sleep(1);
+xtimer_usleep(1000000);
+
 
 //gpio_toggle(GPIO_PIN(PORT_C, 8));
 
