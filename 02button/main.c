@@ -16,7 +16,7 @@ void btn_handler(void *arg)
   gpio_toggle(GPIO_PIN(PORT_C, 8));
  //gpio_toggle(GPIO_PIN(PORT_C, 8));
 
-xtimer_usleep(1000000);
+	xtimer_usleep(500000);
 
 
 //gpio_toggle(GPIO_PIN(PORT_C, 8));
@@ -33,18 +33,19 @@ int main(void)
  
  
 
-
+gpio_init(GPIO_PIN(PORT_C, 9), GPIO_OUT);
+gpio_init(GPIO_PIN(PORT_C, 8), GPIO_OUT);
 
 gpio_init_int(GPIO_PIN(PORT_A, 0), GPIO_IN, GPIO_RISING, btn_handler, NULL);
 
 
 
 while(1){
-
+gpio_toggle(GPIO_PIN(PORT_C, 9));
+xtimer_usleep(50000);
 
 }	
-gpio_init(GPIO_PIN(PORT_C, 9), GPIO_OUT);
-gpio_init(GPIO_PIN(PORT_C, 8), GPIO_OUT);
+
 
 
 
